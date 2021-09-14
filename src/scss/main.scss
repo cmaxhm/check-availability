@@ -1,0 +1,70 @@
+// Variables
+$primaryColor: #394D74;
+
+// Form
+#availability-wrapper {
+  width: 100%;
+  background: white;
+  font-size: 20px;
+
+  * {
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 400;
+  }
+
+  #wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 5px 10px #cccccc;
+
+    form {
+      label {
+        display: inline-block;
+
+        span {
+          display: block;
+          font-weight: 700;
+           color: $primaryColor;
+        }
+
+        input,
+        select {
+          font-size: 20px;
+          padding: 15px;
+          font-weight: 300;
+          background: #f3f3f3;
+          border: none;
+          outline: none;
+        }
+
+        #adults,
+        #children {
+          max-width: 50px;
+        }
+      }
+
+      button {
+        color: white;
+        margin-left: 15px;
+        padding: 15px 20px;
+        border: none;
+        font-size: 20px;
+        font-weight: 700;
+        background: $primaryColor;
+        cursor: pointer;
+        border-radius: 5px;
+
+        &:hover {
+          background: lighten($primaryColor, 10%);
+          transition: background-color 0.2s ease;
+        }
+
+        &:active {
+          background: darken($primaryColor, 20%);
+        }
+      }
+    }
+  }
+}

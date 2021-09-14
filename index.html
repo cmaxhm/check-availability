@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Availability Checker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;700&display=swap">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.css">
+  <link rel="stylesheet" href="./dist/main.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+  <script type="text/javascript" src="./dist/main.js"></script>
+</head>
+<body>
+  <div id="availability-wrapper">
+    <div id="wrapper">
+      <form action="#" method="post">
+        <label for="destination">
+          <span>Destination</span>
+          <select name="destination" id="destination" required>
+            <option disabled selected>Choose destination</option>
+            <option value="casa-pozo">Casa del Pozo Boutique Hostel</option>
+            <option value="casa-puerto">Casa del Puerto Hostel & Suites</option>
+            <option value="casa-zahri">Casa Zahri Boutique Hostel</option>
+          </select>
+        </label>
+        <label for="check-in-out">
+          <span>Check In - Check Out</span>
+          <input type="text" name="check-in-out" id="check-in-out" placeholder="dd/mm/aaaa - dd/mm/aaaa" required>
+        </label>
+        <label for="adults">
+          <span>Adults</span>
+          <input id="adults" type="number" name="adults" min="1" value="1" required>
+        </label>
+        <label for="children">
+          <span>Children</span>
+          <input id="children" type="number" name="children" min="0" value="0" required>
+        </label>
+
+        <button id="availability-form-submit-button" type="submit">Check Availability</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
