@@ -11,6 +11,7 @@ $(document).ready(function () {
 
   dateInput.daterangepicker({
     autoUpdateInput: true,
+    minDate: new Date(),
     locale: {
       cancelLabel: 'Clear'
     }

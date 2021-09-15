@@ -5,7 +5,7 @@ $primaryColor: #394D74;
 #availability-wrapper {
   width: 100%;
   background: white;
-  font-size: 20px;
+  font-size: 16px;
 
   * {
     font-family: 'Urbanist', sans-serif;
@@ -34,14 +34,26 @@ $primaryColor: #394D74;
           font-size: 20px;
           padding: 15px;
           font-weight: 300;
-          background: #f3f3f3;
-          border: none;
+          background: #f6f6f6;
+          border: 1px solid #cccccc;
           outline: none;
+          border-radius: 5px;
         }
 
         #adults,
         #children {
           max-width: 50px;
+        }
+      }
+
+      #check-in-out-label {
+        position: relative;
+
+        img {
+          position: absolute;
+          bottom: 18px;
+          right: 15px;
+          width: 20px;
         }
       }
 
@@ -64,6 +76,36 @@ $primaryColor: #394D74;
         &:active {
           background: darken($primaryColor, 20%);
         }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 1072px) {
+  #availability-wrapper {
+    form {
+      label {
+        margin-top: 10px;
+      }
+
+      button {
+        margin: 10px 0 0 0 !important;
+      }
+    }
+  }
+}
+
+@media all and (max-width: 440px) {
+  #availability-wrapper {
+    form {
+      select,
+      label,
+      input,
+      button {
+        font-size: 16px !important;
+        width: 100%;
+        max-width: 100% !important;
+        box-sizing: border-box;
       }
     }
   }
