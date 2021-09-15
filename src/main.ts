@@ -1,4 +1,4 @@
-$(document).ready(function () {
+jQuery(document).ready(function () {
   // Date Range Picker
   let formData: {
     destination?: string,
@@ -7,9 +7,8 @@ $(document).ready(function () {
     adults?: string,
     children?: string,
   } = {};
-  const dateInput = $('input[name="check-in-out"]');
 
-  dateInput.daterangepicker({
+  jQuery('input[name="check-in-out"]').daterangepicker({
     autoUpdateInput: true,
     minDate: new Date(),
     locale: {
@@ -17,26 +16,26 @@ $(document).ready(function () {
     }
   });
 
-  dateInput.on('hide.daterangepicker', function(ev: Event, picker: daterangepicker.DateRangePicker) {
-    $(this).val(picker.startDate.format('DD/MM/YYYY') + ' - ' + picker.endDate.format('DD/MM/YYYY'));
+  jQuery('input[name="check-in-out"]').on('hide.daterangepicker', function(ev: Event, picker: daterangepicker.DateRangePicker) {
+    jQuery(this).val(picker.startDate.format('DD/MM/YYYY') + ' - ' + picker.endDate.format('DD/MM/YYYY'));
     formData.checkIn = picker.startDate.format('DD/MM/YYYY');
     formData.checkOut = picker.endDate.format('DD/MM/YYYY');
   });
 
   // Form submit
-  $('#availability-form-submit-button').on('click', (e: Event) => {
+  jQuery('#availability-form-submit-button').on('click', (e: Event) => {
     e.preventDefault();
 
     formData = {
-      destination: $('#destination').val() as string,
+      destination: jQuery('#destination').val() as string,
       checkIn: formData.checkIn,
       checkOut: formData.checkOut,
-      adults: $('#adults').val().toString(),
-      children: $('#children').val().toString()
+      adults: jQuery('#adults').val().toString(),
+      children: jQuery('#children').val().toString()
     }
 
     if (
-      !$('#destination').val() ||
+      !jQuery('#destination').val() ||
       !formData.checkIn ||
       formData.adults === '' ||
       formData.children === ''
